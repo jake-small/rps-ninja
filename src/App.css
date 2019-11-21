@@ -1,0 +1,28 @@
+.HotPink {
+  background-color: hotpink !important; 
+}
+
+html, body {
+  background-color: #282c34;
+}
+
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.component {
+  margin: 10px;
+  padding: 10px;
+  height: 75vh;
+  border: whitesmoke solid 3px;
+  background-color: #3e4c6d;
+}
+
+.secondary-component {
+  background-color: #515868; 
+  overflow-y:auto
+}
