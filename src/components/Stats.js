@@ -34,8 +34,14 @@ class Stats extends React.Component {
     return wins;
   }
 
-  winLossRatio() {
-    return (this.wins() / this.losses()).toFixed(2);
+  winRatio() {
+    return ((this.wins() / (this.wins() + this.losses() + this.ties())) * 100).toFixed(2);
+  }
+  lossRatio() {
+    return ((this.losses() / (this.wins() + this.losses() + this.ties())) * 100).toFixed(2);
+  }
+  tieRatio() {
+    return ((this.ties() / (this.wins() + this.losses() + this.ties())) * 100).toFixed(2);
   }
 
   render() {
@@ -57,8 +63,16 @@ class Stats extends React.Component {
           {this.ties()}
         </div>
         <div>
-          Win/Loss:
-          {this.winLossRatio()}
+          Win:
+          {this.winRatio()}%
+        </div>
+        <div>
+          Loss:
+          {this.lossRatio()}%
+        </div>
+        <div>
+          Tie:
+          {this.tieRatio()}%
         </div>
       </div>
     );
