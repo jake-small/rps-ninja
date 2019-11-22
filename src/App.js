@@ -4,32 +4,19 @@ import '../node_modules/cutestrap/dist/css/cutestrap.min.css';
 import Game from './components/Game';
 import History from './components/History';
 import Stats from './components/Stats';
-import Rules from './services/Rules';
+import StandardRules from './services/StandardRules';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { history: [], rules: this.baseRules }
+    this.state = { history: [], rules: new StandardRules() }
   }
 
-  baseRules = new Rules(
-    [
-      "rock",
-      "paper",
-      "scissors"
-    ],
-    {
-      "rock": "scissors",
-      "paper": "rock",
-      "scissors": "paper"
-    }
-  );
-
-  updateHistory(playerChoice, botChoice) {
+  updateHistory(playerChoice, botChoice, playerResult) {
     const { history } = this.state;
 
     this.setState(state => ({
-      history: [[playerChoice, botChoice], ...history]
+      history: [[playerChoice, botChoice, playerResult], ...history]
     }));
   }
 

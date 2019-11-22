@@ -10,7 +10,7 @@ class History extends React.Component {
         <div>
           {this.props.history.map(h => (
             <div>
-              {h[0]} {h[1]}
+              {h[0]} {h[1]} {h[2]}
             </div>))
           }
         </div>

@@ -1,15 +1,15 @@
 class Rules {
-  constructor(choices, rules) {
+  constructor(choices, outcomes) {
     this.choices = choices;
-    this.rules = rules;
+    this.outcomes = outcomes;
   }
 
   result(playerChoice, botChoice) {
     if (playerChoice === undefined || botChoice === undefined) {
       return;
-    } else if (this.rules[playerChoice] === botChoice) {
+    } else if (this.outcomes[playerChoice] === botChoice) {
       return "won";
-    } else if (this.rules[botChoice] === playerChoice) {
+    } else if (this.outcomes[botChoice] === playerChoice) {
       return "lost";
     }
     else {
