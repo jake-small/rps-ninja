@@ -8,13 +8,15 @@ class Game extends React.Component {
       botChoice: "",
       playerChoice: "",
       rules: this.props.rules,
-      bot: new MarkovBot(this.props.rules.choices)
+      bot: new MarkovBot(this.props.rules)
     };
   }
 
   choiceOnClick = (choice) => {
-    let botChoice = this.state.bot.makeChoice();
-    var result = this.props.rules.result(choice, botChoice);
+    const { history, rules } = this.props;
+    const { bot } = this.state;
+    let botChoice = bot.makeChoice(history);
+    var result = rules.result(choice, botChoice);
 
     this.props.sendHistory(choice, botChoice, result);
 

@@ -30,7 +30,7 @@ class App extends React.Component {
             <History history={history} />
           </div>
           <div class="component column--heavy ">
-            <Game rules={rules} sendHistory={this.updateHistory.bind(this)} />
+            <Game rules={rules} history={history} sendHistory={this.updateHistory.bind(this)} />
           </div>
           <div class="component secondary-component ">
             <Stats rules={rules} history={history} />
