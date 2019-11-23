@@ -1,5 +1,6 @@
 import React from "react";
-import MarkovBot from "../services/bots/MarkovBot";
+import MarkovBasic from "../services/bots/MarkovBasic";
+import MarkovResult from "../services/bots/MarkovResult";
 
 class Game extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Game extends React.Component {
       botChoice: "",
       playerChoice: "",
       rules: this.props.rules,
-      bot: new MarkovBot(this.props.rules)
+      bot: new MarkovResult(this.props.rules)
     };
   }
 
