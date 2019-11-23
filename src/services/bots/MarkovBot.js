@@ -31,8 +31,8 @@ class MarkovBot extends Bot {
   }
 
   updateHistory(lastMove, secondToLastMove) {
-    const tally = this.sequentialPlays[lastMove].get(secondToLastMove);
-    this.sequentialPlays[lastMove].set(secondToLastMove, tally + 1);
+    const tally = this.sequentialPlays[secondToLastMove].get(lastMove);
+    this.sequentialPlays[secondToLastMove].set(lastMove, tally + 1);
   }
 
   processHistory(history) {

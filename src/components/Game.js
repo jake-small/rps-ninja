@@ -31,7 +31,7 @@ class Game extends React.Component {
     const { botChoice, playerChoice, result, rules } = this.state;
 
     var outcome = "Make your move.";
-    if (playerChoice !== undefined && botChoice !== undefined) {
+    if (playerChoice && botChoice) {
       outcome = playerChoice + " " + botChoice;
     }
 
