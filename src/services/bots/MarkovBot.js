@@ -18,14 +18,13 @@ class MarkovBot extends Bot {
   };
 
   makeChoice(history) {
-    if (history.length < 2 || history === undefined) {
+    if (history.length < 7 || history === undefined) {
       return this.getRandomMove();
     }
     const playersLastMove = history[0][0];
     const playersSecondToLastMove = history[1][0];
     this.updateHistory(playersLastMove, playersSecondToLastMove);
     const lastMoveMap = this.sequentialPlays[playersLastMove];
-    // TODO: be smarter if there are ties (especially at 0)
     const mostCommonNextMove = [...lastMoveMap.entries()].reduce((a, e) => e[1] > a[1] ? e : a)[0];
     return this.getWinningMove(mostCommonNextMove);
   }
