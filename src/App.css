@@ -25,3 +25,14 @@ html, body {
   background-color: #515868; 
   overflow-y:auto
 }
+
+button {
+  background-color: #3FE8B8 !important;
+  vertical-align: baseline;
+  /* width: 60px !important;
+  height: 60px !important; */
+}
+
+svg {
+  vertical-align: middle;
+}

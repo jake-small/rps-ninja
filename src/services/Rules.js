@@ -1,6 +1,7 @@
 class Rules {
-  constructor(choices, outcomes) {
+  constructor(choices, choiceIcons, outcomes) {
     this.choices = choices;
+    this.choiceIcons = choiceIcons;
     this.outcomes = outcomes;
   }
 

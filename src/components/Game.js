@@ -13,17 +13,17 @@ class Game extends React.Component {
     };
   }
 
-  choiceOnClick = (choice) => {
+  choiceOnClick = (playerChoice) => {
     const { history, rules } = this.props;
     const { bot } = this.state;
     let botChoice = bot.makeChoice(history);
-    var result = rules.result(choice, botChoice);
+    var result = rules.result(playerChoice, botChoice);
 
-    this.props.sendHistory(choice, botChoice, result);
+    this.props.sendHistory(playerChoice, botChoice, result);
 
     this.setState(state => ({
       botChoice: botChoice,
-      playerChoice: choice,
+      playerChoice: playerChoice,
       result: result
     }));
   };
@@ -33,21 +33,30 @@ class Game extends React.Component {
 
     var outcome = "Make your move.";
     if (playerChoice && botChoice) {
-      outcome = playerChoice + " " + botChoice;
+      outcome = playerChoice + " vs " + botChoice;
     }
 
     return (
       <div>
         <h1>rock paper scissors</h1>
         <div>
-          {outcome}
+          {rules.choices.map(c => (
+            <button disabled style={botChoice && playerChoice === c ? { visibility: 'visible' } : { visibility: 'hidden' }}>
+              {rules.choiceIcons !== undefined ? rules.choiceIcons[botChoice] : botChoice}
+            </button>))
+          }
         </div>
         <div>
           {rules.choices.map(c => (
-            <button onClick={() => this.choiceOnClick(c)}>
-              {c}
+            <button onClick={() => this.choiceOnClick(c)} title={c}>
+              {rules.choiceIcons !== undefined ?
+                rules.choiceIcons[c] : c
+              }
             </button>))
           }
+        </div>
+        <div>
+          {outcome}
         </div>
         <h2>
           {result}
