@@ -14,7 +14,7 @@ class Stats extends React.Component {
   }
 
   drawBarGraph(canvas, wins, losses, ties = 0) {
-    if (!canvas) {
+    if (!canvas || wins === 0 && losses === 0 && ties === 0) {
       return;
     }
     const ctx = canvas.getContext('2d');
