@@ -26,11 +26,29 @@ html, body {
   overflow-y:auto
 }
 
+.playerColor {
+  color: #33d9ff;
+}
+
+.botColor {
+  color: #ff8000;
+}
+
 button {
-  background-color: #3FE8B8 !important;
   vertical-align: baseline;
-  /* width: 60px !important;
-  height: 60px !important; */
+  padding: 0px !important;
+  width: 80px !important;
+  margin: 4px !important;
+}
+
+.buttonPlayer {
+  background-color: #33d9ff !important;
+}
+
+.buttonBot {
+  background-color: #ff8000 !important;
+  vertical-align: baseline;
+  opacity: 1 !important;
 }
 
 svg {

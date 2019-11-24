@@ -48,7 +48,7 @@ class Stats extends React.Component {
     return (
       <div>
         <header>
-          <h3>stats</h3>
+          <h2>stats</h2>
         </header>
         <div>
           wins:

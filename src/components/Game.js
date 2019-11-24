@@ -31,24 +31,31 @@ class Game extends React.Component {
   render() {
     const { botChoice, playerChoice, result, rules } = this.state;
 
-    var outcome = "Make your move.";
+    var outcome = "make your move";
     if (playerChoice && botChoice) {
-      outcome = playerChoice + " vs " + botChoice;
+      outcome = <div>
+        <span class='playerColor'>{playerChoice}</span>
+        <span> vs </span>
+        <span class='botColor'>{botChoice}</span>
+      </div>;
     }
 
     return (
       <div>
         <h1>rock paper scissors</h1>
+        <h2 class={result === 'won' && 'playerColor' || result === 'lost' && 'botColor'}>
+          {result ? result : <span>&nbsp;</span>}
+        </h2>
         <div>
           {rules.choices.map(c => (
-            <button disabled style={botChoice && playerChoice === c ? { visibility: 'visible' } : { visibility: 'hidden' }}>
+            <button class='buttonBot' disabled style={botChoice && playerChoice === c ? { visibility: 'visible' } : { visibility: 'hidden' }}>
               {rules.choiceIcons !== undefined ? rules.choiceIcons[botChoice] : botChoice}
             </button>))
           }
         </div>
         <div>
           {rules.choices.map(c => (
-            <button onClick={() => this.choiceOnClick(c)} title={c}>
+            <button class='buttonPlayer' onClick={() => this.choiceOnClick(c)} title={c}>
               {rules.choiceIcons !== undefined ?
                 rules.choiceIcons[c] : c
               }
@@ -58,9 +65,6 @@ class Game extends React.Component {
         <div>
           {outcome}
         </div>
-        <h2>
-          {result}
-        </h2>
       </div>
     );
   };

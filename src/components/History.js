@@ -5,12 +5,12 @@ class History extends React.Component {
     return (
       <div>
         <header>
-          <h3>history</h3>
+          <h2>history</h2>
         </header>
         <div>
           {this.props.history.map(h => (
-            <div>
-              {h[0]} {h[1]} {h[2]}
+            <div class={h[2] === 'won' && 'playerColor' || h[2] === 'lost' && 'botColor'}>
+              {h[2]} {h[0]} {h[1]}
             </div>))
           }
         </div>
