@@ -19,11 +19,11 @@ html, body {
   height: 75vh;
   border: whitesmoke solid 3px;
   background-color: #3e4c6d;
+  overflow-y:auto;
 }
 
 .secondary-component {
   background-color: #515868; 
-  overflow-y:auto
 }
 
 .playerColor {
