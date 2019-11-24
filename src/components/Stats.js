@@ -85,23 +85,27 @@ class Stats extends React.Component {
         <div>
           <canvas ref="winLossCanvas" width={640} height={30} />
         </div>
-        <div style={{ marginBottom: 15 }}>
-          <small>
-            <span>wins: {this.wins()}</span>
-            <span>&nbsp; &nbsp;</span>
-            <span>ties: {this.ties()}</span>
-            <span>&nbsp; &nbsp;</span>
-            <span>losses: {this.losses()}</span>
-          </small>
-        </div>
+        {this.wins() + this.ties() + this.losses() > 0 &&
+          <div style={{ marginBottom: 15 }}>
+            <small>
+              <span>wins: {this.wins()}</span>
+              <span>&nbsp; &nbsp;</span>
+              <span>ties: {this.ties()}</span>
+              <span>&nbsp; &nbsp;</span>
+              <span>losses: {this.losses()}</span>
+            </small>
+          </div>
+        }
         <div>
           <canvas ref="winTieLossCanvas" width={640} height={30} />
         </div>
-        <div>
-          <small>
-            total: {this.wins() + this.losses() + this.ties()}
-          </small>
-        </div>
+        {this.wins() + this.ties() + this.losses() > 0 &&
+          <div>
+            <small>
+              total: {this.wins() + this.losses() + this.ties()}
+            </small>
+          </div>
+        }
       </div>
     );
   }
