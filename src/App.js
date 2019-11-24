@@ -37,7 +37,7 @@ class App extends React.Component {
           </div>
         </section>
         <footer>
-          Check it out on github <a href='https://github.com/jake-small/rps-ninja'>
+          check it out on github <a href='https://github.com/jake-small/rps-ninja'>
             jake-small/rps-ninja</a>
         </footer>
       </div>
