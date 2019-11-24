@@ -34,6 +34,10 @@ html, body {
   color: #ff8000;
 }
 
+.neutralColor {
+  color: whitesmoke;
+}
+
 button {
   vertical-align: baseline;
   padding: 0px !important;

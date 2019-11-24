@@ -25,12 +25,14 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <section class="grid grid--large wrapper-large">
-          <div class="component column--heavy ">
+        <section className="grid grid--large wrapper-large">
+          <div className="component column--heavy ">
             <Game rules={rules} history={history} sendHistory={this.updateHistory.bind(this)} />
+            <br />
+            <br />
             <Stats rules={rules} history={history} />
           </div>
-          <div class="component secondary-component" >
+          <div className="component secondary-component" >
             <History history={history} />
           </div>
         </section>

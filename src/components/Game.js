@@ -1,13 +1,13 @@
-import React from "react";
-import MarkovBasic from "../services/bots/MarkovBasic";
-import MarkovResult from "../services/bots/MarkovResult";
+import React from 'react';
+import MarkovBasic from '../services/bots/MarkovBasic';
+import MarkovResult from '../services/bots/MarkovResult';
 
 class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      botChoice: "",
-      playerChoice: "",
+      botChoice: '',
+      playerChoice: '',
       rules: this.props.rules,
       bot: new MarkovResult(this.props.rules)
     };
@@ -31,31 +31,31 @@ class Game extends React.Component {
   render() {
     const { botChoice, playerChoice, result, rules } = this.state;
 
-    var outcome = "make your move";
+    var outcome = 'make your move';
     if (playerChoice && botChoice) {
       outcome = <div>
-        <span class='playerColor'>{playerChoice}</span>
-        <span> vs </span>
-        <span class='botColor'>{botChoice}</span>
+        <span className='playerColor'>{playerChoice}</span>
+        <span className='neutralColor'> vs </span>
+        <span className='botColor'>{botChoice}</span>
       </div>;
     }
 
     return (
       <div>
         <h1>rock paper scissors</h1>
-        <h2 class={result === 'won' && 'playerColor' || result === 'lost' && 'botColor'}>
+        <h2 className={result === 'won' && 'playerColor' || result === 'lost' && 'botColor'}>
           {result ? result : <span>&nbsp;</span>}
         </h2>
         <div>
           {rules.choices.map(c => (
-            <button class='buttonBot' disabled style={botChoice && playerChoice === c ? { visibility: 'visible' } : { visibility: 'hidden' }}>
+            <button className='buttonBot' disabled style={botChoice && playerChoice === c ? { visibility: 'visible' } : { visibility: 'hidden' }}>
               {rules.choiceIcons !== undefined ? rules.choiceIcons[botChoice] : botChoice}
             </button>))
           }
         </div>
         <div>
           {rules.choices.map(c => (
-            <button class='buttonPlayer' onClick={() => this.choiceOnClick(c)} title={c}>
+            <button className='buttonPlayer' onClick={() => this.choiceOnClick(c)} title={c}>
               {rules.choiceIcons !== undefined ?
                 rules.choiceIcons[c] : c
               }
