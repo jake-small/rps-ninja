@@ -24,18 +24,22 @@ class App extends React.Component {
     const { history, rules } = this.state;
 
     return (
-      <div className="App">
-        <section className="grid grid--large wrapper-large">
-          <div className="component column--heavy ">
+      <div className='App'>
+        <section className='grid grid--large wrapper-large'>
+          <div className='component column--heavy '>
             <Game rules={rules} history={history} sendHistory={this.updateHistory.bind(this)} />
             <br />
             <br />
             <Stats rules={rules} history={history} />
           </div>
-          <div className="component secondary-component" >
+          <div className='component secondary-component' >
             <History history={history} />
           </div>
         </section>
+        <footer>
+          Check it out on github <a href='https://github.com/jake-small/rps-ninja'>
+            jake-small/rps-ninja</a>
+        </footer>
       </div>
     );
   }

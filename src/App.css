@@ -6,6 +6,11 @@ html, body {
   background-color: #282c34;
 }
 
+footer {
+  margin-top: -35px;
+  font-size: 20px;
+}
+
 .App {
   text-align: center;
   align-items: center;
